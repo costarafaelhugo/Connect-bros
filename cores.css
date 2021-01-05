@@ -1,0 +1,111 @@
+body {
+    background-color: #ABE1EB;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-right: 2.5vh;
+    margin-top: 10vh;
+    z-index: -1;
+}
+
+.primeira {
+    width: 200px;
+    height: 200px;
+    background-color: #D90416;
+    display: flex;
+    flex-direction: column;
+}
+
+.segunda {
+    width: 200px;
+    height: 200px;
+    background-color: #0511F2;
+    display: flex;
+    flex-direction: column;
+}
+
+.terceira {
+    width: 200px;
+    height: 200px;
+    background-color: #515a63;
+    display: flex;
+    flex-direction: column;
+}
+
+.quarta {
+    width: 200px;
+    height: 200px;
+    background-color: #09A603;
+    display: flex;
+    flex-direction: column;
+}
+
+.quinta {
+    width: 200px;
+    height: 200px;
+    background-color: #F2CB05;
+    display: flex;
+    flex-direction: column;
+}
+
+.circulos {
+    width: 5vh;
+    height: 5vh;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.back {
+    background-image: url(img/fundo/mario3.jpeg);
+    background-repeat: no-repeat, repeat;
+    background-size: contain;
+    height: 50vh;
+    width: 95vw;
+    background-position: center;
+    margin-top: 17vh;
+}
+
+.caixaCog {
+    background-image: url(img/caixa.png);
+    background-repeat: no-repeat, repeat;
+    background-size: contain;
+    height: 8vh;
+    width: 15vw;
+    position: absolute;
+    z-index: 5;
+    margin-top: 15vh;
+    margin-left: 3vh;
+}
+
+#luigi {
+    margin-left: 40vh;
+}
+
+.marioImg {
+    background-image: url(img/mario.png);
+    background-repeat: no-repeat, repeat;
+    background-size: contain;
+    height: 8vh;
+    width: 15vw;
+    position: absolute;
+    z-index: 4;
+    margin-top: 13vh;
+    margin-left: 1vh;
+}
+
+.luigiImg {
+    background-image: url(img/luigi.png);
+    background-repeat: no-repeat, repeat;
+    background-size: contain;
+    height: 8vh;
+    width: 15vw;
+    position: absolute;
+    z-index: 4;
+    margin-top: 13vh;
+    margin-left: 1.5vh;
+}
