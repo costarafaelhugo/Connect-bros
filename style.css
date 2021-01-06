@@ -191,19 +191,19 @@ body {
 
 @keyframes titulo {
     0% {
-        color: #F23322;
+        color: #A60F1B;
     }
     25% {
-        color: #E77709;
+        color: #157EBF;
     }
     50% {
-        color: #E7B307;
+        color: #0ABF04;
     }
     75% {
-        color: #F7DD04;
+        color: #09A603;
     }
     100% {
-        color: #2175BF;
+        color: #D90404;
     }
 }
 
