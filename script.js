@@ -58,4 +58,4 @@ const alterarCogumelo = () => {
     }
 }
 
-addContainer()
+addContainer();
