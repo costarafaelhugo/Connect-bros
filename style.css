@@ -1,184 +1,184 @@
-                body {
-                    background-color: #ABE1EB;
-                    overflow: hidden;
-                }
-                
-                #container {
-                    display: flex;
-                    justify-content: center;
-                    margin-right: 2.5vh;
-                    margin-top: 37vh;
-                    z-index: -1;
-                }
-                
-                .colunas {
-                    width: 200px;
-                    height: 200px;
-                    display: flex;
-                    flex-direction: column;
-                }
-                
-                .colunas0 {
-                    background-color: #D90416;
-                }
-                
-                .colunas1 {
-                    background-color: #0511F2;
-                }
-                
-                .colunas2 {
-                    background-color: #515a63;
-                }
-                
-                .colunas3 {
-                    background-color: #09A603;
-                }
-                
-                .colunas4 {
-                    background-color: #F2CB05;
-                }
-                
-                .colunas5 {
-                    background-color: #F2CB05;
-                }
-                
-                .colunas6 {
-                    background-color: #F2CB05;
-                }
-                
-                .circulos {
-                    width: 5vh;
-                    height: 5vh;
-                    background-color: white;
-                    border-radius: 50%;
-                    margin: 0 auto;
-                    justify-content: space-between;
-                }
-                
-                .back {
-                    background-image: url(img/fundo/mario3.jpeg);
-                    background-repeat: no-repeat, repeat;
-                    background-size: contain;
-                    height: 50vh;
-                    width: 95vw;
-                    background-position: center;
-                    margin-top: 17vh;
-                }
-                
-                .caixaCog {
-                    background-image: url(img/caixa.png);
-                    background-repeat: no-repeat, repeat;
-                    background-size: contain;
-                    height: 8vh;
-                    width: 15vw;
-                    position: absolute;
-                    z-index: 5;
-                    margin-top: 15vh;
-                    margin-left: 3vh;
-                }
-                
-                #luigi {
-                    margin-left: 40vh;
-                }
-                
-                .marioImg {
-                    background-image: url(img/mario.png);
-                    background-repeat: no-repeat, repeat;
-                    background-size: contain;
-                    height: 8vh;
-                    width: 15vw;
-                    position: absolute;
-                    z-index: 4;
-                    margin-top: 13vh;
-                    margin-left: 1vh;
-                }
-                
-                .luigiImg {
-                    background-image: url(img/luigi.png);
-                    background-repeat: no-repeat, repeat;
-                    background-size: contain;
-                    height: 8vh;
-                    width: 15vw;
-                    position: absolute;
-                    z-index: 4;
-                    margin-top: 13vh;
-                    margin-left: 1.5vh;
-                }
-                
-                .chomp {
-                    background-image: url(img/chomp.gif);
-                    background-repeat: no-repeat, repeat;
-                    background-size: contain;
-                    height: 10vh;
-                    width: 65vw;
-                    position: absolute;
-                    margin-top: -23vh;
-                    margin-left: 5.5vh;
-                    z-index: 0;
-                }
-                
-                .nuvem {
-                    background-image: url(img/nuvem_.png);
-                    background-repeat: no-repeat, repeat;
-                    background-size: contain;
-                    height: 8vh;
-                    width: 23vw;
-                    position: absolute;
-                    margin-top: -60vh;
-                    margin-left: 3vh;
-                    background-color: #ABE1EB;
-                }
-                
-                #nuvem1 {
-                    margin-top: -40vh;
-                    margin-left: 19vh;
-                    z-index: 3;
-                    animation-name: n1;
-                    animation-duration: 80s;
-                    animation-iteration-count: infinite;
-                }
-                
-                #nuvem2 {
-                    margin-top: -50vh;
-                    margin-left: 10vh;
-                    z-index: 3;
-                    animation-name: n2;
-                    animation-duration: 80s;
-                    animation-iteration-count: infinite;
-                }
-                
-                @keyframes n1 {
-                    0% {
-                        left: -20vh;
-                    }
-                    25% {
-                        left: 15vh;
-                    }
-                    50% {
-                        left: 25vh;
-                    }
-                    75% {
-                        left: 15vh;
-                    }
-                    100% {
-                        left: -20vh;
-                    }
-                }
-                
-                @keyframes n2 {
-                    0% {
-                        right: -5vh;
-                    }
-                    25% {
-                        right: 15vh;
-                    }
-                    50% {
-                        right: 25vh;
-                    }
-                    75% {
-                        right: 15vh;
-                    }
-                    100% {
-                        right: -5vh;
-                    }
-                }
+body {
+  background-color: #abe1eb;
+  overflow: hidden;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  margin-right: 2.5vh;
+  margin-top: 37vh;
+  z-index: -1;
+}
+
+.colunas {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.colunas0 {
+  background-color: #d90416;
+}
+
+.colunas1 {
+  background-color: #0511f2;
+}
+
+.colunas2 {
+  background-color: #515a63;
+}
+
+.colunas3 {
+  background-color: #09a603;
+}
+
+.colunas4 {
+  background-color: #f2cb05;
+}
+
+.colunas5 {
+  background-color: #f2cb05;
+}
+
+.colunas6 {
+  background-color: #f2cb05;
+}
+
+.circulos {
+  width: 5vh;
+  height: 5vh;
+  background-color: white;
+  border-radius: 50%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.back {
+  background-image: url(img/fundo/mario3.jpeg);
+  background-repeat: no-repeat, repeat;
+  background-size: contain;
+  height: 50vh;
+  width: 95vw;
+  background-position: center;
+  margin-top: 17vh;
+}
+
+.caixaCog {
+  background-image: url(img/caixa.png);
+  background-repeat: no-repeat, repeat;
+  background-size: contain;
+  height: 8vh;
+  width: 15vw;
+  position: absolute;
+  z-index: 5;
+  margin-top: 15vh;
+  margin-left: 3vh;
+}
+
+#jogador2 {
+  margin-left: 40vh;
+}
+
+.marioImg {
+  background-image: url(img/mario.png);
+  background-repeat: no-repeat, repeat;
+  background-size: contain;
+  height: 8vh;
+  width: 15vw;
+  position: absolute;
+  z-index: 4;
+  margin-top: 13vh;
+  margin-left: 1vh;
+}
+
+.luigiImg {
+  background-image: url(img/luigi.png);
+  background-repeat: no-repeat, repeat;
+  background-size: contain;
+  height: 8vh;
+  width: 15vw;
+  position: absolute;
+  z-index: 4;
+  margin-top: 13vh;
+  margin-left: 1.5vh;
+}
+
+.chomp {
+  background-image: url(img/chomp.gif);
+  background-repeat: no-repeat, repeat;
+  background-size: contain;
+  height: 10vh;
+  width: 65vw;
+  position: absolute;
+  margin-top: -23vh;
+  margin-left: 5.5vh;
+  z-index: 0;
+}
+
+.nuvem {
+  background-image: url(img/nuvem_.png);
+  background-repeat: no-repeat, repeat;
+  background-size: contain;
+  height: 8vh;
+  width: 23vw;
+  position: absolute;
+  margin-top: -60vh;
+  margin-left: 3vh;
+  background-color: #abe1eb;
+}
+
+#nuvem1 {
+  margin-top: -40vh;
+  margin-left: 19vh;
+  z-index: 3;
+  animation-name: n1;
+  animation-duration: 80s;
+  animation-iteration-count: infinite;
+}
+
+#nuvem2 {
+  margin-top: -50vh;
+  margin-left: 10vh;
+  z-index: 3;
+  animation-name: n2;
+  animation-duration: 80s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes n1 {
+  0% {
+    left: -20vh;
+  }
+  25% {
+    left: 15vh;
+  }
+  50% {
+    left: 25vh;
+  }
+  75% {
+    left: 15vh;
+  }
+  100% {
+    left: -20vh;
+  }
+}
+
+@keyframes n2 {
+  0% {
+    right: -5vh;
+  }
+  25% {
+    right: 15vh;
+  }
+  50% {
+    right: 25vh;
+  }
+  75% {
+    right: 15vh;
+  }
+  100% {
+    right: -5vh;
+  }
+}
