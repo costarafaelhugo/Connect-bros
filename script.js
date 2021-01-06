@@ -3,7 +3,10 @@ const imgCogumelo = document.createElement('div');
 imgCogumelo.classList.add('cogumelo');
 container.appendChild(imgCogumelo);
 
-const coluna = (numeroColuna) => {
+const colunaSelecao = document.querySelector('.colunas')
+const circuloSelecao = document.querySelector('.circulos')
+
+const coluna = (numeroColuna) => {  
     const colunas = document.createElement('div');
     colunas.classList.add(`coluna${numeroColuna}`, 'colunas');
     colunas.addEventListener('click', jogada);
@@ -21,17 +24,20 @@ const addContainer = () => {
     }
 }
 
-const jogador1 = () => {}
-
-const jogador2 = () => {}
-
 let contador = 0;
 let cogumelo = 0;
-const jogada = () => {
+const jogada = (e) => {
+    let alvo = e.target.classList[0];
+
+    // if(alvo === circuloSelecao  ) {
+        // a = 'oi'
+    // }
+
+    console.log(alvo)
 
     valorCogumelo()
-    alterarCogumelo()
 
+    alterarCogumelo()
 }
 
 const valorCogumelo = () => {
@@ -48,11 +54,11 @@ const valorCogumelo = () => {
 }
 
 const alterarCogumelo = () => {
-    if (cogumelo === 1) {
-        imgCogumelo.style.backgroundImage = "url(img/red_cogu.png)";
+    if(cogumelo === 1) {
+        imgCogumelo.style.backgroundImage = "url('img/green_cogu.png')";
     }
-    if (cogumelo === 2) {
-        imgCogumelo.style.backgroundImage = "url(img/grren_cogu.png)";
+    if(cogumelo === 2) {
+        imgCogumelo.style.backgroundImage = "url('img/red_cogu.png')";
     }
 }
 
