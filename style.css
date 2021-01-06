@@ -1,108 +1,138 @@
 body {
-  background-color: #abe1eb;
-  overflow: hidden;
+    background-color: #abe1eb;
+    overflow: hidden;
+    position: fixed;
+}
+
+@font-face {
+    font-family: mario;
+    src: url(fonts/super_mario_bros_3/Super-Mario-Bros--3.ttf);
+}
+
+.title {
+    font-family: mario;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #3168B3;
+    margin-top: -4vh;
+    animation-name: titulo;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
 
 #container {
-  display: flex;
-  justify-content: center;
-  margin-right: 2.5vh;
-  margin-top: 37vh;
-  z-index: -1;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    z-index: 0;
+    margin-bottom: 12vh;
+    width: 50vh;
+    height: 10vw;
+    justify-content: center;
 }
 
 .colunas {
-  width: 200px;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
+    width: 10vh;
+    height: 10vh;
+    flex-direction: column;
 }
 
 .colunas0 {
-  background-color: #d90416;
+    background-color: #d90416;
 }
 
 .colunas1 {
-  background-color: #0511f2;
+    background-color: #0511f2;
 }
 
 .colunas2 {
-  background-color: #515a63;
+    background-color: #515a63;
 }
 
 .colunas3 {
-  background-color: #09a603;
+    background-color: #09a603;
 }
 
 .colunas4 {
-  background-color: #f2cb05;
+    background-color: #f2cb05;
 }
 
 .colunas5 {
-  background-color: #f2cb05;
+    background-color: #f2cb05;
 }
 
 .colunas6 {
-  background-color: #f2cb05;
+    background-color: #f2cb05;
 }
 
 .circulos {
-  width: 5vh;
-  height: 5vh;
-  background-color: white;
-  border-radius: 50%;
-  margin: 0 auto;
-  justify-content: space-between;
+    width: 5vh;
+    height: 5vh;
+    background-color: white;
+    border-radius: 50%;
+    margin: 0 auto;
+    justify-content: space-between;
+    margin-bottom: 1vh;
+}
+
+.jogadores {
+    /* height: 8vh;
+    width: 15vw;
+    position: absolute;
+    z-index: 4;
+    margin-top: 13vh;
+    margin-left: 1.5vh; */
 }
 
 .back {
-  background-image: url(img/fundo/mario3.jpeg);
-  background-repeat: no-repeat, repeat;
-  background-size: contain;
-  height: 50vh;
-  width: 95vw;
-  background-position: center;
-  margin-top: 17vh;
+    background-image: url(img/fundo/mario3.jpeg);
+    background-repeat: no-repeat, repeat;
+    background-size: contain;
+    height: 50vh;
+    width: 95vw;
+    background-position: center;
+    margin-top: 30vh;
 }
 
 .caixaCog {
-  background-image: url(img/caixa.png);
-  background-repeat: no-repeat, repeat;
-  background-size: contain;
-  height: 8vh;
-  width: 15vw;
-  position: absolute;
-  z-index: 5;
-  margin-top: 15vh;
-  margin-left: 3vh;
+    background-image: url(img/caixa.png);
+    background-repeat: no-repeat, repeat;
+    background-size: contain;
+    height: 8vh;
+    width: 15vw;
+    position: absolute;
+    z-index: 5;
+    margin-top: 19vh;
+    margin-left: 3vh;
 }
 
 #jogador2 {
-  margin-left: 40vh;
+    margin-left: 40vh;
 }
 
 .marioImg {
-  background-image: url(img/mario.png);
-  background-repeat: no-repeat, repeat;
-  background-size: contain;
-  height: 8vh;
-  width: 15vw;
-  position: absolute;
-  z-index: 4;
-  margin-top: 13vh;
-  margin-left: 1vh;
+    background-image: url(img/mario.png);
+    background-repeat: no-repeat, repeat;
+    background-size: contain;
+    height: 8vh;
+    width: 15vw;
+    position: absolute;
+    z-index: 5;
+    margin-top: 10vh;
+    margin-left: 1vh;
 }
 
 .luigiImg {
-  background-image: url(img/luigi.png);
-  background-repeat: no-repeat, repeat;
-  background-size: contain;
-  height: 8vh;
-  width: 15vw;
-  position: absolute;
-  z-index: 4;
-  margin-top: 13vh;
-  margin-left: 1.5vh;
+    background-image: url(img/luigi.png);
+    background-repeat: no-repeat, repeat;
+    background-size: contain;
+    height: 8vh;
+    width: 15vw;
+    position: absolute;
+    z-index: 4;
+    margin-top: 10vh;
+    margin-left: 1.5vh;
 }
 
 .cogumelo {
@@ -116,79 +146,109 @@ body {
 }
 
 .chomp {
-  background-image: url(img/chomp.gif);
-  background-repeat: no-repeat, repeat;
-  background-size: contain;
-  height: 10vh;
-  width: 65vw;
-  position: absolute;
-  margin-top: -23vh;
-  margin-left: 5.5vh;
-  z-index: 0;
+    background-image: url(img/chomp.gif);
+    background-repeat: no-repeat, repeat;
+    background-size: contain;
+    height: 10vh;
+    width: 65vw;
+    position: absolute;
+    margin-top: -23vh;
+    margin-left: 5.5vh;
+    z-index: 0;
 }
 
 .nuvem {
-  background-image: url(img/nuvem_.png);
-  background-repeat: no-repeat, repeat;
-  background-size: contain;
-  height: 8vh;
-  width: 23vw;
-  position: absolute;
-  margin-top: -60vh;
-  margin-left: 3vh;
-  background-color: #abe1eb;
+    background-image: url(img/nuvem_.png);
+    background-repeat: no-repeat, repeat;
+    background-size: contain;
+    height: 8vh;
+    width: 23vw;
+    position: absolute;
+    margin-top: -60vh;
+    margin-left: 3vh;
+    background-color: #abe1eb;
 }
 
 #nuvem1 {
-  margin-top: -40vh;
-  margin-left: 19vh;
-  z-index: 3;
-  animation-name: n1;
-  animation-duration: 80s;
-  animation-iteration-count: infinite;
+    margin-top: -40vh;
+    margin-left: 19vh;
+    z-index: 3;
+    animation-name: n1;
+    animation-duration: 80s;
+    animation-iteration-count: infinite;
 }
 
 #nuvem2 {
-  margin-top: -50vh;
-  margin-left: 10vh;
-  z-index: 3;
-  animation-name: n2;
-  animation-duration: 80s;
-  animation-iteration-count: infinite;
+    margin-top: -50vh;
+    margin-left: 10vh;
+    z-index: 3;
+    animation-name: n2;
+    animation-duration: 80s;
+    animation-iteration-count: infinite;
+}
+
+.cogumelo {
+    display: flex;
+    width: 50vh;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    margin-bottom: 10vh;
+}
+
+@keyframes titulo {
+    0% {
+        color: #A60F1B;
+    }
+    25% {
+        color: #157EBF;
+    }
+    50% {
+        color: #0ABF04;
+    }
+    75% {
+        color: #09A603;
+    }
+    100% {
+        color: #D90404;
+    }
 }
 
 @keyframes n1 {
-  0% {
-    left: -20vh;
-  }
-  25% {
-    left: 15vh;
-  }
-  50% {
-    left: 25vh;
-  }
-  75% {
-    left: 15vh;
-  }
-  100% {
-    left: -20vh;
-  }
+    0% {
+        left: -20vh;
+    }
+    25% {
+        left: 15vh;
+    }
+    50% {
+        left: 25vh;
+    }
+    75% {
+        left: 15vh;
+    }
+    100% {
+        left: -20vh;
+    }
 }
 
 @keyframes n2 {
-  0% {
-    right: -5vh;
-  }
-  25% {
-    right: 15vh;
-  }
-  50% {
-    right: 25vh;
-  }
-  75% {
-    right: 15vh;
-  }
-  100% {
-    right: -5vh;
-  }
+    0% {
+        right: -5vh;
+    }
+    25% {
+        right: 15vh;
+    }
+    50% {
+        right: 25vh;
+    }
+    75% {
+        right: 15vh;
+    }
+    100% {
+        right: -5vh;
+    }
 }

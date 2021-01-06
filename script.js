@@ -1,9 +1,7 @@
 const container = document.getElementById('container');
-
-const body = document.querySelector('body');
 const imgCogumelo = document.createElement('div');
 imgCogumelo.classList.add('cogumelo');
-body.appendChild(imgCogumelo);
+container.appendChild(imgCogumelo);
 
 const colunaSelecao = document.querySelector('.colunas')
 const circuloSelecao = document.querySelector('.circulos')
@@ -11,8 +9,8 @@ const circuloSelecao = document.querySelector('.circulos')
 const coluna = (numeroColuna) => {  
     const colunas = document.createElement('div');
     colunas.classList.add(`coluna${numeroColuna}`, 'colunas');
-    colunas.addEventListener('click',jogada);
-    for(let i = 0; i < 6; i++) {
+    colunas.addEventListener('click', jogada);
+    for (let i = 0; i < 6; i++) {
         let circulo = document.createElement('div');
         circulo.classList.add('circulos');
         colunas.appendChild(circulo);
@@ -21,7 +19,7 @@ const coluna = (numeroColuna) => {
 }
 
 const addContainer = () => {
-    for(let i = 0; i < 7; i++) {
+    for (let i = 0; i < 7; i++) {
         coluna(i);
     }
 }
@@ -43,16 +41,16 @@ const jogada = (e) => {
 }
 
 const valorCogumelo = () => {
-    if(contador % 2 === 0) {
+    if (contador % 2 === 0) {
         cogumelo = 1;
         contador += 1;
         return cogumelo
     }
-    if(contador % 2 !== 0) {
+    if (contador % 2 !== 0) {
         cogumelo = 2;
         contador += 1;
         return cogumelo
-    }    
+    }
 }
 
 const alterarCogumelo = () => {
