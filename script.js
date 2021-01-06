@@ -5,6 +5,9 @@ const imgCogumelo = document.createElement('div');
 imgCogumelo.classList.add('cogumelo');
 body.appendChild(imgCogumelo);
 
+const colunaSelecao = document.querySelector('.colunas')
+const circuloSelecao = document.querySelector('.circulos')
+
 const coluna = (numeroColuna) => {  
     const colunas = document.createElement('div');
     colunas.classList.add(`coluna${numeroColuna}`, 'colunas');
@@ -23,17 +26,20 @@ const addContainer = () => {
     }
 }
 
-const jogador1 = () => {}
-
-const jogador2 = () => {}
-
 let contador = 0;
 let cogumelo = 0;
-const jogada = () => {
+const jogada = (e) => {
+    let alvo = e.target.classList[0];
+
+    // if(alvo === circuloSelecao  ) {
+        // a = 'oi'
+    // }
+
+    console.log(alvo)
 
     valorCogumelo()
-    alterarCogumelo()
 
+    alterarCogumelo()
 }
 
 const valorCogumelo = () => {
@@ -51,10 +57,10 @@ const valorCogumelo = () => {
 
 const alterarCogumelo = () => {
     if(cogumelo === 1) {
-        imgCogumelo.style.backgroundImage = "url('img/super-mario-bros-3-toad-super-mario-bros-the-lost-levels-mario-bros-png-clip-art.png')";
+        imgCogumelo.style.backgroundImage = "url('img/green_cogu.png')";
     }
     if(cogumelo === 2) {
-        imgCogumelo.style.backgroundImage = "url('img/png-transparent-super-mario-advance-4-super-mario-bros-3-super-mario-world-skateboarding-text-super-mario-bros-rectangle.png')";
+        imgCogumelo.style.backgroundImage = "url('img/red_cogu.png')";
     }
 }
 

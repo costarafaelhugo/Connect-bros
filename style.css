@@ -105,6 +105,16 @@ body {
   margin-left: 1.5vh;
 }
 
+.cogumelo {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .chomp {
   background-image: url(img/chomp.gif);
   background-repeat: no-repeat, repeat;
