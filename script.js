@@ -1,10 +1,10 @@
 const container = document.getElementById('container');
+
 const imgCogumelo = document.createElement('div');
 imgCogumelo.classList.add('cogumelo');
-container.appendChild(imgCogumelo);
 
-const colunaSelecao = document.querySelector('.colunas')
-const circuloSelecao = document.querySelector('.circulos')
+const colunaSelecao = document.getElementsByClassName('colunas')
+const circuloSelecao = document.getElementsByClassName('circulos')
 
 const coluna = (numeroColuna) => {  
     const colunas = document.createElement('div');
@@ -27,17 +27,40 @@ const addContainer = () => {
 let contador = 0;
 let cogumelo = 0;
 const jogada = (e) => {
-    let alvo = e.target.classList[0];
-
-    // if(alvo === circuloSelecao  ) {
-        // a = 'oi'
-    // }
-
-    console.log(alvo)
+    
+    selecionaColuna(e)
 
     valorCogumelo()
 
     alterarCogumelo()
+}
+
+const selecionaColuna = (e) => {
+    let alvo = e.target.classList[0];
+
+    if(alvo == circuloSelecao[0].classList[0]) {
+        alvo = e.target.parentElement.classList[0]
+    }
+    console.log(alvo)
+    const elemento = document.getElementsByClassName(`${alvo}`)
+
+    for(let i = 0; i < 6; i++) {
+        let conteudoCirculo = elemento[0].children[i]
+
+        let img = document.createElement('div')
+        img = imgCogumelo
+        // console.log(img)
+
+        if(i === 5) {
+            conteudoCirculo.appendChild(img);
+
+        } else if(conteudoCirculo.children.length !== 0) {
+            conteudoCirculo = elemento[0].children[i - 1]
+            conteudoCirculo.appendChild(img);
+            break
+        } 
+        // console.log(i)
+    }
 }
 
 const valorCogumelo = () => {
