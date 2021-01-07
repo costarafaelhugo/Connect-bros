@@ -380,7 +380,7 @@ body {
         width: 130px;
         height: 97px;
     }
-    @keyframes n1 {
+    @keyframes n1, n2 {
         0% {
             left: 5%;
         }
@@ -412,38 +412,7 @@ body {
             left: 5%;
         }
     }
-    @keyframes n2 {
-        0% {
-            right: 5%;
-        }
-        20% {
-            right: 15%;
-        }
-        30% {
-            right: 30%;
-        }
-        40% {
-            right: 50%;
-        }
-        50% {
-            right: 45%;
-        }
-        60% {
-            right: 30%;
-        }
-        70% {
-            right: 15%;
-        }
-        80% {
-            right: 25%;
-        }
-        90% {
-            right: 15%;
-        }
-        100% {
-            right: 5%;
-        }
-    }
+
     @keyframes move {
         from {
             top: 15px;
