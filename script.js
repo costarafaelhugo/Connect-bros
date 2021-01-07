@@ -73,18 +73,16 @@ const criaCogumelo = (elemento) => {
 
 const alterarCogumelo = (imgCogumelo) => {
     if(cogumelo === 1) {
-        imgCogumelo.style.backgroundImage = "url('img/green_cogu.png')"
+        imgCogumelo.style.backgroundImage = "url('img/green_cogu.png')";
     }
     if(cogumelo === 2) {
-        imgCogumelo.style.backgroundImage = "url('img/red_cogu.png')"
+        imgCogumelo.style.backgroundImage = "url('img/red_cogu.png')";
     }
 }
 
 const condicaoVitoria = (elemento) => {
 
     condicaoVitoriaVertical(elemento)
-
-    condicaoVitoriaDiagonal()
 
 }
 
@@ -99,16 +97,14 @@ const condicaoVitoriaVertical = (coluna) => {
 
     if(vCogumelo[0] === vCogumelo[1] && vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] !== 0) {
         console.log('vc venceu')
-    }
-    if(vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] !== 0) {
+    } else if(vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] !== 0) {
         console.log('vc venceu')
-    }
-    if(vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] === vCogumelo[5] && vCogumelo[5] !== 0) {
+    } else if(vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] === vCogumelo[5] && vCogumelo[5] !== 0) {
         console.log('vc venceu')
     }
 }
 
-constc condicaoVitoriaDiagonal = () => {
+const condicaoVitoriaDiagonal = () => {
 
 }
 
