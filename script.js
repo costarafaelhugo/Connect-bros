@@ -1,7 +1,7 @@
 const container = document.getElementById('container');
 
-const colunaSelecao = document.getElementsByClassName('colunas')
-const circuloSelecao = document.getElementsByClassName('circulos')
+const colunaSelecao = document.getElementsByClassName('colunas');
+const circuloSelecao = document.getElementsByClassName('circulos');
 
 const criaColuna = (numeroColuna) => {  
     const colunas = document.createElement('div');
@@ -25,9 +25,9 @@ let contador = 1;
 let cogumelo = 0;
 const jogada = (e) => {
 
-    valorCogumelo()
+    valorCogumelo();
     
-    selecionaColuna(e)
+    selecionaColuna(e);
 }
 
 const valorCogumelo = () => {
@@ -44,9 +44,9 @@ const selecionaColuna = (e) => {
     let alvo = e.target.classList[0];
 
     if(alvo == circuloSelecao[0].classList[0]) {
-        alvo = e.target.parentElement.classList[0]
+        alvo = e.target.parentElement.classList[0];
     }
-    const elemento = document.getElementsByClassName(`${alvo}`)
+    const elemento = document.getElementsByClassName(`${alvo}`);
 
     criaCogumelo(elemento)
 }
@@ -55,15 +55,16 @@ const criaCogumelo = (elemento) => {
     const imgCogumelo = document.createElement('div');
     imgCogumelo.classList.add('cogumelo');
 
-    alterarCogumelo(imgCogumelo)
+    alterarCogumelo(imgCogumelo);
 
     for(let i = 0; i < 6; i++) {
         let conteudoCirculo = elemento[0].children[i]
 
         if(conteudoCirculo.children.length === 1) {
-            conteudoCirculo = elemento[0].children[i - 1]
+            conteudoCirculo = elemento[0].children[i - 1];
             conteudoCirculo.appendChild(imgCogumelo);
-            break
+            condicaoVitoria(elemento);
+            break;
         } else if(i === 5) {
             conteudoCirculo.appendChild(imgCogumelo);
         }
@@ -76,6 +77,26 @@ const alterarCogumelo = (imgCogumelo) => {
     }
     if(cogumelo === 2) {
         imgCogumelo.style.backgroundImage = "url('img/red_cogu.png')";
+    }
+}
+
+const condicaoVitoria = (coluna) => {
+    
+    let vCogumelo = [0, 0, 0, 0, 0, 0];
+
+    for(let i = 5; i >= 0; i--) {
+        if(coluna[0].children[i].children[0] !== undefined);
+        vCogumelo[i] = coluna[0].children[i].children[0].style.backgroundImage;
+    }
+
+    if(vCogumelo[0] === vCogumelo[1] && vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] !== 0) {
+        console.log('vc venceu');
+    }
+    if(vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] !== 0) {
+        console.log('vc venceu');
+    }
+    if(vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] === vCogumelo[5] && vCogumelo[5] !== 0) {
+        console.log('vc venceu');
     }
 }
 
