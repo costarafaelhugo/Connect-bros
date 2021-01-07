@@ -9,7 +9,7 @@ const criaColuna = (numeroColuna) => {
     colunas.addEventListener('click', jogada);
     for (let i = 0; i < 6; i++) {
         let circulo = document.createElement('div');
-        circulo.classList.add('circulos');
+        circulo.classList.add('circulos', `circulos${i}`);
         colunas.appendChild(circulo);
     }
     container.appendChild(colunas);
@@ -24,36 +24,10 @@ const addContainer = () => {
 let contador = 1;
 let cogumelo = 0;
 const jogada = (e) => {
-    
+
     valorCogumelo()
     
     selecionaColuna(e)
-}
-
-const selecionaColuna = (e) => {
-    let alvo = e.target.classList[0];
-
-    if(alvo == circuloSelecao[0].classList[0]) {
-        alvo = e.target.parentElement.classList[0]
-    }
-    console.log(alvo)
-    const elemento = document.getElementsByClassName(`${alvo}`)
-
-    const imgCogumelo = document.createElement('div');
-    imgCogumelo.classList.add('cogumelo');
-    alterarCogumelo(imgCogumelo)
-
-    for(let i = 0; i < 6; i++) {
-        let conteudoCirculo = elemento[0].children[i]
-
-        if(i === 5) {
-            conteudoCirculo.appendChild(imgCogumelo);
-        } else if(conteudoCirculo.children.length !== 0) {
-            conteudoCirculo = elemento[0].children[i - 1]
-            conteudoCirculo.appendChild(imgCogumelo);
-            break
-        } 
-    }
 }
 
 const valorCogumelo = () => {
@@ -64,6 +38,36 @@ const valorCogumelo = () => {
     }
     cogumelo = 2;
     return cogumelo
+}
+
+const selecionaColuna = (e) => {
+    let alvo = e.target.classList[0];
+
+    if(alvo == circuloSelecao[0].classList[0]) {
+        alvo = e.target.parentElement.classList[0]
+    }
+    const elemento = document.getElementsByClassName(`${alvo}`)
+
+    criaCogumelo(elemento)
+}
+
+const criaCogumelo = (elemento) => {
+    const imgCogumelo = document.createElement('div');
+    imgCogumelo.classList.add('cogumelo');
+
+    alterarCogumelo(imgCogumelo)
+
+    for(let i = 0; i < 6; i++) {
+        let conteudoCirculo = elemento[0].children[i]
+
+        if(conteudoCirculo.children.length === 1) {
+            conteudoCirculo = elemento[0].children[i - 1]
+            conteudoCirculo.appendChild(imgCogumelo);
+            break
+        } else if(i === 5) {
+            conteudoCirculo.appendChild(imgCogumelo);
+        }
+    }
 }
 
 const alterarCogumelo = (imgCogumelo) => {
