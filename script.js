@@ -1,12 +1,9 @@
 const container = document.getElementById('container');
 
-const imgCogumelo = document.createElement('div');
-imgCogumelo.classList.add('cogumelo');
-
 const colunaSelecao = document.getElementsByClassName('colunas')
 const circuloSelecao = document.getElementsByClassName('circulos')
 
-const coluna = (numeroColuna) => {  
+const criaColuna = (numeroColuna) => {  
     const colunas = document.createElement('div');
     colunas.classList.add(`coluna${numeroColuna}`, 'colunas');
     colunas.addEventListener('click', jogada);
@@ -20,19 +17,17 @@ const coluna = (numeroColuna) => {
 
 const addContainer = () => {
     for (let i = 0; i < 7; i++) {
-        coluna(i);
+        criaColuna(i);
     }
 }
 
-let contador = 0;
+let contador = 1;
 let cogumelo = 0;
 const jogada = (e) => {
     
-    selecionaColuna(e)
-
     valorCogumelo()
-
-    alterarCogumelo()
+    
+    selecionaColuna(e)
 }
 
 const selecionaColuna = (e) => {
@@ -44,39 +39,34 @@ const selecionaColuna = (e) => {
     console.log(alvo)
     const elemento = document.getElementsByClassName(`${alvo}`)
 
+    const imgCogumelo = document.createElement('div');
+    imgCogumelo.classList.add('cogumelo');
+    alterarCogumelo(imgCogumelo)
+
     for(let i = 0; i < 6; i++) {
         let conteudoCirculo = elemento[0].children[i]
 
-        let img = document.createElement('div')
-        img = imgCogumelo
-        // console.log(img)
-
         if(i === 5) {
-            conteudoCirculo.appendChild(img);
-
+            conteudoCirculo.appendChild(imgCogumelo);
         } else if(conteudoCirculo.children.length !== 0) {
             conteudoCirculo = elemento[0].children[i - 1]
-            conteudoCirculo.appendChild(img);
+            conteudoCirculo.appendChild(imgCogumelo);
             break
         } 
-        // console.log(i)
     }
 }
 
 const valorCogumelo = () => {
+    contador += 1;
     if (contador % 2 === 0) {
         cogumelo = 1;
-        contador += 1;
         return cogumelo
     }
-    if (contador % 2 !== 0) {
-        cogumelo = 2;
-        contador += 1;
-        return cogumelo
-    }
+    cogumelo = 2;
+    return cogumelo
 }
 
-const alterarCogumelo = () => {
+const alterarCogumelo = (imgCogumelo) => {
     if(cogumelo === 1) {
         imgCogumelo.style.backgroundImage = "url('img/green_cogu.png')";
     }

@@ -36,9 +36,14 @@ body {
 
 .colunas {
     width: 63vw;
-    height: 36vh;
+    height: 37vh;
     flex-direction: column;
     z-index: 4;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.colunas:hover {
+    border: 1px solid #000;
 }
 
 .circulos {
