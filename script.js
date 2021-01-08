@@ -106,25 +106,6 @@ const condicaoVitoriaVertical = (coluna) => {
     }
 }
 
-const condicaoVitoriaHorizontal = (coluna) => {
-    let vCogumelo = [
-        0, 0, 0, 0, 0, 0, 0,
-
-    ]
-    console.log(coluna)
-    for (let i = 6; i >= 0; i--) {
-        if (coluna[0].children[i].children[0] !== undefined)
-            vCogumelo[i] = coluna[0].children[i].children[0].style.backgroundImage
-    }
-
-    if (vCogumelo[0] === vCogumelo[1] && vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] !== 0) {
-        console.log('vc venceu')
-    } else if (vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] !== 0) {
-        console.log('vc venceu')
-    } else if (vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] === vCogumelo[5] && vCogumelo[5] !== 0) {
-        console.log('vc venceu')
-    }
-}
 
 
 addContainer();
