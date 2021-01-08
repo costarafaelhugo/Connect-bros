@@ -1,3 +1,5 @@
+const body = document.querySelector('body')
+
 const container = document.getElementById('container')
 
 const colunaSelecao = document.getElementsByClassName('colunas')
@@ -63,6 +65,7 @@ const criaCogumelo = (elemento) => {
         if (conteudoCirculo.children.length === 1) {
             conteudoCirculo = elemento[0].children[i - 1]
             conteudoCirculo.appendChild(imgCogumelo)
+
             condicaoVitoria(elemento)
             break
         } else if (i === 5) {
@@ -86,6 +89,9 @@ const condicaoVitoria = (elemento) => {
     condicaoVitoriaVertical(elemento)
     condicaoVitoriaHorizontal(elemento)
 
+    // condicaoVitoriaDiagonal(elemento)
+
+    condicaoEmpate()
 }
 
 const condicaoVitoriaVertical = (coluna) => {
@@ -97,15 +103,79 @@ const condicaoVitoriaVertical = (coluna) => {
             vCogumelo[i] = coluna[0].children[i].children[0].style.backgroundImage
     }
 
-    if (vCogumelo[0] === vCogumelo[1] && vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] !== 0) {
-        console.log('vc venceu')
-    } else if (vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] !== 0) {
-        console.log('vc venceu')
-    } else if (vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] === vCogumelo[5] && vCogumelo[5] !== 0) {
-        console.log('vc venceu')
+    if(vCogumelo[0] === vCogumelo[1] && vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] !== 0) {
+        vitoria()
+    } else if(vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] !== 0) {
+        vitoria()
+    } else if(vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] === vCogumelo[5] && vCogumelo[5] !== 0) {
+        vitoria()
     }
 }
 
+// let Contador = 0
+// const condicaoVitoriaDiagonal = (elemento) => {
+//     for(let i = 5; i >= 0; i--){
+       
+//         if(elemento[0].children[i].children[0] !== undefined || elemento[0].nextElementSibling.children[i - 1] !== undefined){
+//             console.log('oi')
+//             // console.log(elemento[0].children[i].children[0].style.backgroundImage)
+//             console.log(elemento[0].nextElementSibling.children[i - 1].children[0].style.backgroundImage)
+//             if(elemento[0].children[i].children[0].style.backgroundImage === elemento[0].nextElementSibling.children[i - 1].children[0].style.backgroundImage) {
+//                 Contador++
+//                 console.log(Contador)
+//             }
 
+//             // console.log(elemento[0].nextElementSibling.children[i + 1].children[0])
+//         }
+
+//     }
+// }
+
+const condicaoEmpate = () => {
+
+    let status = true
+
+    for(let coluna = 0; coluna < 7; coluna++){
+        let numeroColuna = container.children[coluna]
+
+        for(let circulo = 0; circulo < 6; circulo++){
+            if(numeroColuna.children[circulo].children.length === 0) {
+                status = false
+            }
+        }
+    }
+
+    if(status === true) {
+        empate()
+    }
+}
+
+const vitoria = () => {
+    // const inputButton = document.createElement('input')
+    // inputButton.type = 'button'
+    // inputButton.value = 'Fim!'
+    // inputButton.onclick = 'reset()'
+    // divVitoria.appendChild(inputButton)
+
+    const divVitoria = document.createElement('div')
+    divVitoria.className = 'vitoria'
+    body.appendChild(divVitoria)
+}
+
+const empate = () => {
+    // const inputButton = document.createElement('input')
+    // inputButton.type = 'button'
+    // inputButton.value = 'Fim!'
+    // inputButton.onclick = 'reset()'
+    // divEmpate.appendChild(inputButton)
+
+    const divEmpate = document.createElement('div')
+    divEmpate.className = 'vitoria'
+    body.appendChild(divEmpate)
+}
+
+// const reset = () => {
+
+// }
 
 addContainer();
