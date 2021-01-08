@@ -87,30 +87,68 @@ const alterarCogumelo = (imgCogumelo) => {
 const condicaoVitoria = (elemento) => {
 
     condicaoVitoriaVertical(elemento)
-        // condicaoVitoriaHorizontal(elemento)
+
+    // condicaoVitoriaHorizontal(elemento)
 
     // condicaoVitoriaDiagonal(elemento)
 
-    // condicaoEmpate()
+    condicaoEmpate()
 }
 
 const condicaoVitoriaVertical = (coluna) => {
-
+    
     let vCogumelo = [0, 0, 0, 0, 0, 0]
 
-    for (let i = 5; i >= 0; i--) {
-        if (coluna[0].children[i].children[0] !== undefined)
+    for(let i = 5; i >= 0; i--) {
+        if(coluna[0].children[i].children[0] !== undefined){
             vCogumelo[i] = coluna[0].children[i].children[0].style.backgroundImage
+        }
     }
 
-    if (vCogumelo[0] === vCogumelo[1] && vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] !== 0) {
+    if(vCogumelo[0] === vCogumelo[1] && vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] !== 0) {
         vitoria()
-    } else if (vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] !== 0) {
+    } else if(vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] !== 0) {
         vitoria()
-    } else if (vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] === vCogumelo[5] && vCogumelo[5] !== 0) {
+    } else if(vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] === vCogumelo[5] && vCogumelo[5] !== 0) {
         vitoria()
     }
 }
+
+// const condicaoVitoriaHorizontal = (elemento) => {
+
+    // let vCogumelo = [
+    //     [0, 0, 0, 0, 0, 0, 0],
+    //     [0, 0, 0, 0, 0, 0, 0],
+    //     [0, 0, 0, 0, 0, 0, 0],
+    //     [0, 0, 0, 0, 0, 0, 0],
+    //     [0, 0, 0, 0, 0, 0, 0],
+    //     [0, 0, 0, 0, 0, 0, 0],
+    // ]
+
+//     let vCogumelo = [0, 0, 0, 0, 0, 0, 0]
+        
+//     for(let circulo = 5; circulo >= 0; circulo--) {
+//         let numeroCirculo = elemento[0].children[circulo]
+//         // console.log(numeroCirculo.children[0])
+
+//         if(numeroCirculo.children[0] !== undefined){
+//             vCogumelo[circulo] = numeroCirculo.children[0].style.backgroundImage
+//             console.log(vCogumelo)
+//         }
+
+//     }
+    
+//     if(vCogumelo[0] === vCogumelo[1] && vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] !== 0) {
+//         // vitoria()
+//         console.log('vitoria')
+//     } else if(vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] !== 0) {
+//         // vitoria()
+//         console.log('vitoria')
+//     } else if(vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] === vCogumelo[5] && vCogumelo[5] !== 0) {
+//         // vitoria()
+//         console.log('vitoria')
+//     }
+// }
 
 // let Contador = 0
 // const condicaoVitoriaDiagonal = (elemento) => {
@@ -131,21 +169,21 @@ const condicaoVitoriaVertical = (coluna) => {
 //     }
 // }
 
-// const condicaoEmpate = () => {
+const condicaoEmpate = () => {
 
-//     let status = true
+    let status = true
 
-    for (let coluna = 0; coluna < 7; coluna++) {
+    for(let coluna = 0; coluna < 7; coluna++){
         let numeroColuna = container.children[coluna]
 
-        for (let circulo = 0; circulo < 6; circulo++) {
-            if (numeroColuna.children[circulo].children.length === 0) {
+        for(let circulo = 0; circulo < 6; circulo++){
+            if(numeroColuna.children[circulo].children.length === 0) {
                 status = false
             }
         }
     }
 
-    if (status === true) {
+    if(status === true) {
         empate()
     }
 }
