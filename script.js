@@ -70,6 +70,8 @@ const criaCogumelo = (elemento) => {
             break
         } else if (i === 5) {
             conteudoCirculo.appendChild(imgCogumelo)
+
+            condicaoVitoria(elemento)
         }
     }
 }
@@ -86,68 +88,95 @@ const alterarCogumelo = (imgCogumelo) => {
 
 const condicaoVitoria = (elemento) => {
 
-    condicaoVitoriaVertical(elemento)
+    // condicaoVitoriaVertical(elemento)
 
-    // condicaoVitoriaHorizontal(elemento)
+    condicaoVitoriaHorizontal(elemento)
 
     // condicaoVitoriaDiagonal(elemento)
 
     condicaoEmpate()
 }
 
-const condicaoVitoriaVertical = (coluna) => {
+// const condicaoVitoriaVertical = (coluna) => {
     
-    let vCogumelo = [0, 0, 0, 0, 0, 0]
+//     let vCogumelo = [0, 0, 0, 0, 0, 0]
 
-    for(let i = 5; i >= 0; i--) {
-        if(coluna[0].children[i].children[0] !== undefined){
-            vCogumelo[i] = coluna[0].children[i].children[0].style.backgroundImage
+//     for(let i = 5; i >= 0; i--) {
+//         if(coluna[0].children[i].children[0] !== undefined){
+//             vCogumelo[i] = coluna[0].children[i].children[0].style.backgroundImage
+//         }
+//     }
+
+//     if(vCogumelo[0] === vCogumelo[1] && vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] !== 0) {
+//         vitoria()
+//     } else if(vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] !== 0) {
+//         vitoria()
+//     } else if(vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] === vCogumelo[5] && vCogumelo[5] !== 0) {
+//         vitoria()
+//     }
+// }
+
+const condicaoVitoriaHorizontal = (elemento) => {
+
+    let vCogumelo = [
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+    ]
+
+    // let vCogumelo = [0, 0, 0, 0, 0, 0, 0]
+    const arrColunas = document.querySelectorAll('.colunas')
+    
+    for(let coluna = 0; coluna < 7; coluna++) {
+
+        let numeroColuna = arrColunas[coluna]
+        // console.log(numeroColuna.children)
+
+        for(let circulo = 5; circulo >= 0; circulo--) {
+            // console.log(numeroColuna.children[circulo].children[0])
+            if(numeroColuna.children[circulo].children[0] !== undefined){
+                vCogumelo[circulo][coluna] = numeroColuna.children[circulo].children[0].style.backgroundImage
+            }
+        }
+
+    }
+    
+
+    for(let linha = 0; linha < 6; linha ++) {
+        let verificaLinha = vCogumelo[linha]
+
+        if(verificaLinha[0] === verificaLinha[1] && verificaLinha[1] === verificaLinha[2] && verificaLinha[2] === verificaLinha[3] && verificaLinha[3] !== 0) {
+            vitoria()
+        } else if(verificaLinha[1] === verificaLinha[2] && verificaLinha[2] === verificaLinha[3] && verificaLinha[3] === verificaLinha[4] && verificaLinha[4] !== 0) {
+            vitoria()
+        } else if(verificaLinha[2] === verificaLinha[3] && verificaLinha[3] === verificaLinha[4] && verificaLinha[4] === verificaLinha[5] && verificaLinha[5] !== 0) {
+            vitoria()
+        } else if(verificaLinha[3] === verificaLinha[4] && verificaLinha[4] === verificaLinha[5] && verificaLinha[5] === verificaLinha[6] && verificaLinha[6] !== 0) {
+            vitoria()
         }
     }
+    
 
-    if(vCogumelo[0] === vCogumelo[1] && vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] !== 0) {
-        vitoria()
-    } else if(vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] !== 0) {
-        vitoria()
-    } else if(vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] === vCogumelo[5] && vCogumelo[5] !== 0) {
-        vitoria()
-    }
 }
 
-// const condicaoVitoriaHorizontal = (elemento) => {
+// for(let coluna = 0; coluna < 7; coluna++) {
+//     // let numeroCirculo = elemento[0].children[circulo]
 
-    // let vCogumelo = [
-    //     [0, 0, 0, 0, 0, 0, 0],
-    //     [0, 0, 0, 0, 0, 0, 0],
-    //     [0, 0, 0, 0, 0, 0, 0],
-    //     [0, 0, 0, 0, 0, 0, 0],
-    //     [0, 0, 0, 0, 0, 0, 0],
-    //     [0, 0, 0, 0, 0, 0, 0],
-    // ]
+//     let numeroColuna = arrColunas[coluna]
+//     console.log(numeroColuna.children[coluna])
 
-//     let vCogumelo = [0, 0, 0, 0, 0, 0, 0]
-        
-//     for(let circulo = 5; circulo >= 0; circulo--) {
-//         let numeroCirculo = elemento[0].children[circulo]
-//         // console.log(numeroCirculo.children[0])
+//     // for(let circulo = 5; circulo >= 0; circulo--) {
+//     //     if(numeroCirculo.children[0] !== undefined){
+//     //         vCogumelo[coluna][circulo] = numeroCirculo.children[0].style.backgroundImage
+//     //         console.log(vCogumelo)
+//     //     }
+//     // }
 
-//         if(numeroCirculo.children[0] !== undefined){
-//             vCogumelo[circulo] = numeroCirculo.children[0].style.backgroundImage
-//             console.log(vCogumelo)
-//         }
+   
 
-//     }
-    
-//     if(vCogumelo[0] === vCogumelo[1] && vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] !== 0) {
-//         // vitoria()
-//         console.log('vitoria')
-//     } else if(vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] !== 0) {
-//         // vitoria()
-//         console.log('vitoria')
-//     } else if(vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] === vCogumelo[5] && vCogumelo[5] !== 0) {
-//         // vitoria()
-//         console.log('vitoria')
-//     }
 // }
 
 // let Contador = 0
