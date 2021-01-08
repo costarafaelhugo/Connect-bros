@@ -87,7 +87,7 @@ const alterarCogumelo = (imgCogumelo) => {
 const condicaoVitoria = (elemento) => {
 
     condicaoVitoriaVertical(elemento)
-    condicaoVitoriaHorizontal(elemento)
+        // condicaoVitoriaHorizontal(elemento)
 
     // condicaoVitoriaDiagonal(elemento)
 
@@ -103,11 +103,11 @@ const condicaoVitoriaVertical = (coluna) => {
             vCogumelo[i] = coluna[0].children[i].children[0].style.backgroundImage
     }
 
-    if(vCogumelo[0] === vCogumelo[1] && vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] !== 0) {
+    if (vCogumelo[0] === vCogumelo[1] && vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] !== 0) {
         vitoria()
-    } else if(vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] !== 0) {
+    } else if (vCogumelo[1] === vCogumelo[2] && vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] !== 0) {
         vitoria()
-    } else if(vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] === vCogumelo[5] && vCogumelo[5] !== 0) {
+    } else if (vCogumelo[2] === vCogumelo[3] && vCogumelo[3] === vCogumelo[4] && vCogumelo[4] === vCogumelo[5] && vCogumelo[5] !== 0) {
         vitoria()
     }
 }
@@ -115,7 +115,7 @@ const condicaoVitoriaVertical = (coluna) => {
 // let Contador = 0
 // const condicaoVitoriaDiagonal = (elemento) => {
 //     for(let i = 5; i >= 0; i--){
-       
+
 //         if(elemento[0].children[i].children[0] !== undefined || elemento[0].nextElementSibling.children[i - 1] !== undefined){
 //             console.log('oi')
 //             // console.log(elemento[0].children[i].children[0].style.backgroundImage)
@@ -135,17 +135,17 @@ const condicaoEmpate = () => {
 
     let status = true
 
-    for(let coluna = 0; coluna < 7; coluna++){
+    for (let coluna = 0; coluna < 7; coluna++) {
         let numeroColuna = container.children[coluna]
 
-        for(let circulo = 0; circulo < 6; circulo++){
-            if(numeroColuna.children[circulo].children.length === 0) {
+        for (let circulo = 0; circulo < 6; circulo++) {
+            if (numeroColuna.children[circulo].children.length === 0) {
                 status = false
             }
         }
     }
 
-    if(status === true) {
+    if (status === true) {
         empate()
     }
 }
@@ -159,6 +159,7 @@ const vitoria = () => {
 
     const divVitoria = document.createElement('div')
     divVitoria.className = 'vitoria'
+    divVitoria.textContent = ("Você venceu!")
     body.appendChild(divVitoria)
 }
 
@@ -171,6 +172,7 @@ const empate = () => {
 
     const divEmpate = document.createElement('div')
     divEmpate.className = 'empate'
+    divEmpate.textContent = ('Empatou')
     body.appendChild(divEmpate)
 }
 
