@@ -100,7 +100,7 @@ const condicaoVitoriaVertical = (coluna) => {
     
     let vCogumelo = [0, 0, 0, 0, 0, 0]
 
-    for(let i = 5; i >= 0; i--){
+    for(let i = 5; i >= 0; i--) {
         if(coluna[0].children[i].children[0] !== undefined){
             vCogumelo[i] = coluna[0].children[i].children[0].style.backgroundImage
         }
