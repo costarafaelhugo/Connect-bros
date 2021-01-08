@@ -91,7 +91,7 @@ const condicaoVitoria = (elemento) => {
 
     // condicaoVitoriaDiagonal(elemento)
 
-    condicaoEmpate()
+    // condicaoEmpate()
 }
 
 const condicaoVitoriaVertical = (coluna) => {
@@ -131,9 +131,9 @@ const condicaoVitoriaVertical = (coluna) => {
 //     }
 // }
 
-const condicaoEmpate = () => {
+// const condicaoEmpate = () => {
 
-    let status = true
+//     let status = true
 
     for (let coluna = 0; coluna < 7; coluna++) {
         let numeroColuna = container.children[coluna]
