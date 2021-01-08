@@ -421,6 +421,49 @@
                             width: 130px;
                             height: 97px;
                         }
+                        .empate {
+                            width: 35vw;
+                            height: 73vh;
+                            background-color: #000;
+                            z-index: 10;
+                            margin-top: -90vh;
+                            position: absolute;
+                            margin-left: 50vh;
+                            content: "Você venceu";
+                            color: white;
+                            background-image: url(img/MF/empate.gif);
+                            background-repeat: no-repeat, repeat;
+                            background-size: cover;
+                            position: absolute;
+                            text-align: center;
+                            animation-name: titulo;
+                            animation-duration: 4s;
+                            animation-iteration-count: infinite;
+                            font-size: 6rem;
+                            font-family: mario;
+                        }
+                        .vitoria {
+                            width: 65vw;
+                            height: 108vh;
+                            background-color: #000;
+                            z-index: 10;
+                            margin-top: -99vh;
+                            position: absolute;
+                            margin-left: 20vh;
+                            content: "Você venceu";
+                            color: white;
+                            font-family: mario;
+                            text-transform: uppercase;
+                            animation-name: titulo;
+                            animation-duration: 4s;
+                            animation-iteration-count: infinite;
+                            font-size: 9rem;
+                            background-image: url(img/MF/When_you_win_1st_place_in_Mario_Kart.gif);
+                            background-repeat: no-repeat, repeat;
+                            background-size: cover;
+                            position: absolute;
+                            text-align: center;
+                        }
                         @keyframes n1 {
                             0% {
                                 left: 5%;
