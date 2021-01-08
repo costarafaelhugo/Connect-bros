@@ -170,7 +170,7 @@ const empate = () => {
     // divEmpate.appendChild(inputButton)
 
     const divEmpate = document.createElement('div')
-    divEmpate.className = 'vitoria'
+    divEmpate.className = 'empate'
     body.appendChild(divEmpate)
 }
 
