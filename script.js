@@ -5,7 +5,7 @@ const container = document.getElementById('container')
 const colunaSelecao = document.getElementsByClassName('colunas')
 const circuloSelecao = document.getElementsByClassName('circulos')
 
-const criaColuna = (numeroColuna) => {  
+const criaColuna = (numeroColuna) => {
     const colunas = document.createElement('div')
     colunas.classList.add(`coluna${numeroColuna}`, 'colunas')
     colunas.addEventListener('click', jogada)
@@ -28,7 +28,7 @@ let cogumelo = 0;
 const jogada = (e) => {
 
     valorCogumelo()
-    
+
     selecionaColuna(e)
 }
 
@@ -45,7 +45,7 @@ const valorCogumelo = () => {
 const selecionaColuna = (e) => {
     let alvo = e.target.classList[0];
 
-    if(alvo == circuloSelecao[0].classList[0]) {
+    if (alvo == circuloSelecao[0].classList[0]) {
         alvo = e.target.parentElement.classList[0]
     }
     const elemento = document.getElementsByClassName(`${alvo}`)
@@ -59,28 +59,27 @@ const criaCogumelo = (elemento) => {
 
     alterarCogumelo(imgCogumelo)
 
-    
-
-    for(let i = 0; i < 6; i++) {
+    for (let i = 0; i < 6; i++) {
         let conteudoCirculo = elemento[0].children[i]
 
-        if(conteudoCirculo.children.length === 1) {
+        if (conteudoCirculo.children.length === 1) {
             conteudoCirculo = elemento[0].children[i - 1]
             conteudoCirculo.appendChild(imgCogumelo)
 
             condicaoVitoria(elemento)
             break
-        } else if(i === 5) {
+        } else if (i === 5) {
             conteudoCirculo.appendChild(imgCogumelo)
         }
     }
 }
 
 const alterarCogumelo = (imgCogumelo) => {
-    if(cogumelo === 1) {
+    if (cogumelo === 1) {
         imgCogumelo.style.backgroundImage = "url('img/green_cogu.png')";
+
     }
-    if(cogumelo === 2) {
+    if (cogumelo === 2) {
         imgCogumelo.style.backgroundImage = "url('img/red_cogu.png')";
     }
 }
@@ -154,7 +153,7 @@ const condicaoVitoriaVertical = (coluna) => {
 // let Contador = 0
 // const condicaoVitoriaDiagonal = (elemento) => {
 //     for(let i = 5; i >= 0; i--){
-       
+
 //         if(elemento[0].children[i].children[0] !== undefined || elemento[0].nextElementSibling.children[i - 1] !== undefined){
 //             console.log('oi')
 //             // console.log(elemento[0].children[i].children[0].style.backgroundImage)
@@ -198,6 +197,7 @@ const vitoria = () => {
 
     const divVitoria = document.createElement('div')
     divVitoria.className = 'vitoria'
+    divVitoria.textContent = ("Você venceu!")
     body.appendChild(divVitoria)
 }
 
@@ -210,6 +210,7 @@ const empate = () => {
 
     const divEmpate = document.createElement('div')
     divEmpate.className = 'empate'
+    divEmpate.textContent = ('Empatou')
     body.appendChild(divEmpate)
 }
 
